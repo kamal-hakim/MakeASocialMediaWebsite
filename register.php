@@ -53,6 +53,16 @@ if(isset($_POST['register_button']))
         // check if email is in valid format
         if(filter_var($em, FILTER_VALIDATE_EMAIL)) {
           $em = filter_var($em, FILTER_VALIDATE_EMAIL);
+
+          //check if email is already exist
+          $e_check = mysqli_query($con, "SELECT email FROM users WHERE email='$em'");
+
+          //Count the number of rows returned
+          $num_rows = mysqli_num_rows($e_check);
+
+          if($num_rows > 0) {
+            echo "Email already exist";
+          }
         }
         else {
           echo "Email not valid!";
