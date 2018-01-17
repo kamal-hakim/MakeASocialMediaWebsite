@@ -48,7 +48,7 @@ if(isset($_POST['register_button']))
     $password = strip_tags($_POST['reg_password']); //strip_tags is for security purpose. It strips out HTML tags in the form
 
     //password confirmation
-    $password = strip_tags($_POST['reg_password2']); //strip_tags is for security purpose. It strips out HTML tags in the form
+    $password2 = strip_tags($_POST['reg_password2']); //strip_tags is for security purpose. It strips out HTML tags in the form
 
     //Date
     $date = date("Y-m-d"); //gets current date
