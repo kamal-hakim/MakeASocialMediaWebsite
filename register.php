@@ -16,7 +16,7 @@ $password2 = ""; //Password confirmation
 $date = ""; //Sign up date
 $error_array = ""; //Holds error messages
 
-if(isset($_POST('register_button')))
+if(isset($_POST['register_button']))
 {
     //Registration form values
 
@@ -48,6 +48,19 @@ if(isset($_POST('register_button')))
 
     //Date
     $date = date("Y-m-d"); //gets current date
+
+    if($em == $em2) {
+        // check if email is in valid format
+        if(filter_var($em, FILTER_VALIDATE_EMAIL)) {
+          $em = filter_var($em, FILTER_VALIDATE_EMAIL);
+        }
+        else {
+          echo "Email not valid!";
+        }
+    }
+    else {
+      echo "Emails don't match";
+    }
 }
 
 ?>
@@ -64,13 +77,13 @@ if(isset($_POST('register_button')))
       <br>
       <input type="text" name="reg_lname" placeholder="Last Name" required>
       <br>
-      <input type="text" name="reg_email" placeholder="Email" required>
+      <input type="email" name="reg_email" placeholder="Email" required>
       <br>
-      <input type="text" name="reg_email2" placeholder="Confirm Email" required>
+      <input type="email" name="reg_email2" placeholder="Confirm Email" required>
       <br>
-      <input type="text" name="reg_password" placeholder="Password" required>
+      <input type="password" name="reg_password" placeholder="Password" required>
       <br>
-      <input type="text" name="reg_password2" placeholder="Confirm Password" required>
+      <input type="password" name="reg_password2" placeholder="Confirm Password" required>
       <br>
       <input type="submit" name="register_button" value="Register">
     </form>
