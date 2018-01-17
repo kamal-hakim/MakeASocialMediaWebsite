@@ -1,3 +1,57 @@
+<?php
+$con = mysqli_connect("localhost", "root", "", "social"); //conection variable
+
+if(mysqli_connect_errno())
+{
+  echo "Failed to connect: " . mysqli_connect_errno();
+}
+
+//Declare variable to prevent errors
+$fname = ""; //First name
+$lname = ""; //Last name
+$em = ""; //Email
+$em2 = ""; //Email confirmation
+$password = ""; //Password
+$password2 = ""; //Password confirmation
+$date = ""; //Sign up date
+$error_array = ""; //Holds error messages
+
+if(isset($_POST('register_button')))
+{
+    //Registration form values
+
+    //First name
+    $fname = strip_tags($_POST['reg_fname']); //strip_tags is for security purpose. It strips out HTML tags in the form
+    $fname = str_replace(' ', '', $fname); // remove spaces
+    $fname = ucfirst(strtolower($fname)); // uppercase first letter
+
+    //Last name
+    $lname = strip_tags($_POST['reg_lname']); //strip_tags is for security purpose. It strips out HTML tags in the form
+    $lname = str_replace(' ', '', $lname); // remove spaces
+    $lname = ucfirst(strtolower($lname)); // uppercase first letter
+
+    //email
+    $em = strip_tags($_POST['reg_email']); //strip_tags is for security purpose. It strips out HTML tags in the form
+    $em = str_replace(' ', '', $em); // remove spaces
+    $em = ucfirst(strtolower($em)); // uppercase first letter
+
+    //email confirmation
+    $em2 = strip_tags($_POST['reg_email2']); //strip_tags is for security purpose. It strips out HTML tags in the form
+    $em2 = str_replace(' ', '', $em2); // remove spaces
+    $em2 = ucfirst(strtolower($em2)); // uppercase first letter
+
+    //password
+    $password = strip_tags($_POST['reg_password']); //strip_tags is for security purpose. It strips out HTML tags in the form
+
+    //password confirmation
+    $password = strip_tags($_POST['reg_password2']); //strip_tags is for security purpose. It strips out HTML tags in the form
+
+    //Date
+    $date = date("Y-m-d"); //gets current date
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,7 +72,7 @@
       <br>
       <input type="text" name="reg_password2" placeholder="Confirm Password" required>
       <br>
-      <input type="submit" name="register" value="Register">
+      <input type="submit" name="register_button" value="Register">
     </form>
   </body>
 </html>
