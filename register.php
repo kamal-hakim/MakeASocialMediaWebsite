@@ -96,6 +96,22 @@ if(isset($_POST['register_button']))
     else {
       array_push($error_array, "Email do not match<br>");
     }
+
+    if(empty($error_array)) {
+      $password = md5($password); //Encrypt password before sending to database
+
+      //Generate username by concatenating first name and last name
+      $username = strtolower($fname . "_" . $lname);
+      $check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username='$username'");
+
+      $i = 0;
+      //if username exist add number to $username
+      while(mysqli_num_rows($check_username_query != 0)) {
+        $i++;
+        $username = $username . "_" . $i;
+        $check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username='$username'");
+      }
+    }
 }
 
 ?>
