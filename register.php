@@ -106,7 +106,7 @@ if(isset($_POST['register_button']))
 
       $i = 0;
       //if username exist add number to $username
-      while(mysqli_num_rows($check_username_query != 0)) {
+      while(mysqli_num_rows($check_username_query)!= 0) {
         $i++;
         $username = $username . "_" . $i;
         $check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username='$username'");
@@ -120,6 +120,7 @@ if(isset($_POST['register_button']))
       if($rand == 2)
           $profile_pic = "assets/images/profile_pics/defaults/head_turqoise.png";
 
+      $query = mysqli_query($con, "INSERT INTO users VALUES ('', '$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', ',')");
     }
 }
 
