@@ -121,6 +121,14 @@ if(isset($_POST['register_button']))
           $profile_pic = "assets/images/profile_pics/defaults/head_turqoise.png";
 
       $query = mysqli_query($con, "INSERT INTO users VALUES ('', '$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', ',')");
+
+      array_push($error_array, "<span style='color: #14C800;'>You're all set!. Go ahead and login!</span><br>");
+
+      //Clear session variables
+      $_SESSION['reg_fname'] = "";
+      $_SESSION['reg_lname'] = "";
+      $_SESSION['reg_email'] = "";
+      $_SESSION['reg_email2'] = "";      
     }
 }
 
@@ -180,6 +188,9 @@ if(isset($_POST['register_button']))
       <input type="password" name="reg_password2" placeholder="Confirm Password" required>
       <br>
       <input type="submit" name="register_button" value="Register">
+      <br>
+      <?php if(in_array("<span style='color: #14C800;'>You're all set!. Go ahead and login!</span><br>", $error_array)) echo "<span style='color: #14C800;'>You're all set!. Go ahead and login!</span><br>"; ?>
+
     </form>
   </body>
 </html>
