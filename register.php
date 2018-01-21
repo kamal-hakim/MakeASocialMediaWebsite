@@ -13,6 +13,8 @@
   </head>
   <body>
 
+  <div class="wrapper">
+
     <form action="register.php" method="post">
         <input type="email" name="log_email" placeholder="Email Address" value="<?php
         if(isset($_SESSION['log_email'])) {
@@ -77,5 +79,7 @@
       <?php if(in_array("<span style='color: #14C800;'>You're all set!. Go ahead and login!</span><br>", $error_array)) echo "<span style='color: #14C800;'>You're all set!. Go ahead and login!</span><br>"; ?>
 
     </form>
+
+  </div>
   </body>
 </html>
