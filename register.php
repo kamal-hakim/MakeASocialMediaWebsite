@@ -9,6 +9,7 @@
   <head>
     <meta charset="utf-8">
     <title>Welcome to Swirlfeed</title>
+    <link rel="stylesheet" href="assets/css/register_style.css">
   </head>
   <body>
 
