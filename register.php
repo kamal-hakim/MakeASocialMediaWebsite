@@ -15,7 +15,10 @@
 
   <div class="wrapper">
     <div class="login-box">
-
+      <div class="login-header">
+        <h1>Swirlfeed!</h1>
+        Login or sign up below
+      </div>
       <form action="register.php" method="post">
           <input type="email" name="log_email" placeholder="Email Address" value="<?php
           if(isset($_SESSION['log_email'])) {
