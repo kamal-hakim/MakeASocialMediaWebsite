@@ -1,6 +1,6 @@
 <?php
 include("include/header.php");
-session_destroy();
+//session_destroy();
 ?>
     Hello Kamal Hakim!
   </body>
