@@ -1,13 +1,7 @@
 <?php
-  require 'config/config.php'
+include("include/header.php");
+session_destroy();
 ?>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Welcome to Swirlfeed</title>
-  </head>
-  <body>
     Hello Kamal Hakim!
   </body>
 </html>
