@@ -29,7 +29,6 @@ body {
   margin-left: 10px;
   font-size: 30px;
   position: relative;
-
   text-shadow: #73B6E2 0.5px 0.5px 0px;
   color: #1086BA;
 }
@@ -95,7 +94,7 @@ nav a:hover {
 .main_column {
   float: right;
   width: 70%;
-  z-index: -1
+  z-index: -1;
   min-height: 160px;
 }
 
@@ -110,8 +109,27 @@ nav a:hover {
   margin-right: 5px;
   border: 1px solid #D3D3D3;
   font-size: 12px;
+  padding: 5px;
 }
 
 textarea:focus {
   outline: 0;
+}
+
+.post_form input[type="submit"] {
+  width: 10%;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  font-family: 'Bellota-BoldItalic', sans-serif;
+  color: #fff;
+  text-shadow: #73B6E2 0.5px 0.5px 0px;
+  position: absolute;
+  outline: 0;
+  margin: 0;
+}
+
+.post_form input[type="submit"]:active {
+  padding: 5px 4px 4px 5px;
 }
