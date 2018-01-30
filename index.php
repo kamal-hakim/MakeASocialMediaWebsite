@@ -19,6 +19,12 @@ include("include/header.php");
       </div>
     </div>
 
+    <div class="main_column column">
+      <form class="post_form" action="index.php" method="post">
+        <textarea name="post_text" id="post_text" placeholder="Got something to say?"></textarea>
+        <input type="submit" name="post" id="post_button" value="Post">
+      </form>
+    </div>
     </div>
   </body>
 </html>
