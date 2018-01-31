@@ -29,7 +29,7 @@
       </div>
 
       <nav>
-        <a href="#">
+        <a href="<?php echo $userLoggedIn;?>">
           <?php echo "Welcome " . $user['first_name']; ?>
         </a>
         <a href="index.php">
